@@ -46,6 +46,8 @@ post "/" do
       response = "Sorry, can't play in this channel."
     elsif params[:text].match(/^jeopardy me/i)
       response = respond_with_question(params)
+	elsif params[:text].match(/^jm/i)
+	  response = respond_with_questions(params)
     elsif params[:text].match(/my score$/i)
       response = respond_with_user_score(params[:user_id])
     elsif params[:text].match(/^help$/i)
